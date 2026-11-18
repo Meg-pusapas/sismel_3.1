@@ -1,0 +1,4 @@
+SISMEL 3.0 - Dashboard estático (sin dependencias externas)
+Despliegue en Vercel: arrastre esta carpeta a vercel.com/new o ejecute `vercel --prod` dentro de ella.
+Archivos: index.html (datos incrustados), sismel_dashboard_datos.json, descargas/*.csv
+Actualizar: ejecute el notebook 05 y reemplace index.html reconstruyéndolo (build_site.py) o reemplace los CSV/JSON.

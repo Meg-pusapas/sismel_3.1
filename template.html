@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Observatorio SISMEL 3.0 | Registros de suicidio en Colombia 2015–2026</title>
+<meta name="description" content="Observatorio de frecuencias de registros de muerte por suicidio (INMLCF), 2015–2026: resumen, evolución, pronóstico, territorio, caracterización y metodología.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script defer src="lucide.min.js"></script>
+<style>
+:root{--cream:#f7f4ed;--side:#eee9df;--bur:#9b2c2c;--burh:#822323;--yel:#fef3c7;--yeld:#78350f;--ink:#1c1917;--mut:#686259;--line:#e8e2d5;--line2:#eee8dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:9rem}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.5}
+.serif,h1.serif,h2.serif{font-family:'Playfair Display',Georgia,serif}
+a{color:var(--bur)}
+.layout{display:flex;min-height:100vh;overflow-x:hidden}
+#sidebar{width:18rem;background:var(--side);border-right:1px solid #e2dacd;padding:20px;display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;position:sticky;top:0;height:100vh;z-index:30;transition:transform .3s,margin-left .3s,opacity .2s}
+#sidebar.collapsed{margin-left:-18rem;opacity:0;pointer-events:none}
+.logo{display:flex;align-items:center;gap:12px;margin-bottom:24px}.logo .b{width:40px;height:40px;background:var(--bur);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 2px 6px #0002}
+.logo h1{font-size:18px;margin:0;line-height:1.15}.logo p{margin:0;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--bur)}
+.navt{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);padding:0 12px;margin:0 0 8px}
+.nav-item{display:flex;align-items:center;gap:12px;padding:10px 16px;border-radius:12px;font-size:14px;font-weight:500;color:#524c42;text-decoration:none;transition:all .2s;margin-bottom:4px}
+.nav-item:hover{background:#e3dcd0;color:var(--ink)}.nav-item.active{background:var(--bur);color:#fff;font-weight:600;box-shadow:0 4px 12px #9b2c2c40}
+.ic{width:16px;height:16px;vertical-align:-3px}
+.srcbox{background:#e5ded0;border:1px solid #d6cdbd;border-radius:12px;padding:14px;font-size:11px;color:var(--mut)}
+.srcbox .r{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}.srcbox b{color:var(--ink);font-weight:600}
+.srcbox .pill{background:var(--yel);color:var(--yeld);padding:2px 8px;border-radius:5px;font-size:10px;font-weight:600}.srcbox p{margin:4px 0 0;font-size:10px;line-height:1.3}
+.content{flex:1;min-width:0;display:flex;flex-direction:column}
+.sticky{position:sticky;top:0;z-index:30}
+.hot{background:var(--yel);border-bottom:1px solid #f3e4b7;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;font-size:12px;color:var(--yeld)}
+.hot .l{display:flex;align-items:center;gap:8px;font-weight:500}.hot .r{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-weight:700}
+.hot .p1{background:var(--bur);color:#fff;padding:2px 10px;border-radius:6px;font-size:11px}.hot .p2{background:#fef3c7;border:1px solid #fcd34d;color:#78350f;padding:2px 10px;border-radius:6px;font-size:11px}
+.hdr{background:var(--cream);border-bottom:1px solid var(--line);padding:12px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;box-shadow:0 1px 2px #0000000a}
+.hdr .k{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--bur);margin:0}.hdr h2{margin:0;font-size:20px}
+.hdr .l{display:flex;align-items:center;gap:12px}.hdr .rr{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--mut)}
+.iconbtn{padding:8px;background:var(--side);border:1px solid #d6cdbd;border-radius:12px;color:var(--bur);cursor:pointer;display:flex}
+.btnb{background:var(--bur);color:#fff;border:0;font:inherit;font-size:12px;font-weight:600;padding:8px 12px;border-radius:12px;cursor:pointer;display:flex;align-items:center;gap:6px}.btnb:hover{background:var(--burh)}
+main{padding:24px;max-width:1280px;margin:0 auto;width:100%}
+section.mod{padding-top:24px;margin-top:40px;border-top:1px solid var(--line)}section.mod:first-child{border-top:0;margin-top:0;padding-top:0}
+.kick{font-size:10px;font-weight:700;color:var(--bur);letter-spacing:.12em;text-transform:uppercase;margin:0}
+.mhead h2{font-size:26px;margin:2px 0 4px;color:var(--ink)}
+.lead{font-size:13px;color:var(--mut);margin:0 0 16px;max-width:920px;line-height:1.6}
+h3{font-size:15px;margin:0 0 8px;color:var(--ink);font-weight:700}
+.badge-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;font-size:11.5px;font-weight:600;background:#fef3c7;color:#78350f;border:1px solid #fde68a}
+.flex{display:flex}.flex-wrap{flex-wrap:wrap}.gap-2{gap:8px}
+.hero{display:grid;grid-template-columns:2fr 1fr;gap:24px;align-items:start;margin:16px 0}
+.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:0;font-weight:700}.hero .it{font-style:italic;color:var(--bur)}
+.ethic{background:#f2ece0;border:1px solid #e2d7c5;border-radius:16px;padding:16px}.ethic-t{color:var(--bur);font-weight:700;font-size:12px;margin-bottom:6px}.ethic p{margin:0;font-size:12px;color:var(--mut);line-height:1.55}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.grid{display:grid;gap:16px}.g2{grid-template-columns:repeat(auto-fit,minmax(380px,1fr))}.g4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 2px 8px #1c191708;transition:box-shadow .2s;position:relative}.card:hover{box-shadow:0 6px 16px #1c19170f}
+.kpi .v{font-size:27px;font-weight:700;color:var(--ink);line-height:1.15;font-family:'Playfair Display',Georgia,serif}.kpi .l{font-size:12px;color:var(--mut);font-weight:500}.kpi .s{font-size:11.5px;color:var(--mut);margin-top:4px}
+.tag{display:inline-block;font-size:10.5px;padding:2px 8px;border-radius:99px;font-weight:600;vertical-align:middle}
+.t-pre{background:#fde68a;color:#78350f}.t-ok{background:#dcefe2;color:#1d5f38}.t-res{background:#fef3c7;color:#78350f;border:1px solid #fcd34d}.t-no{background:#ece8df;color:#524c42}
+.note{background:#fef3c7;border:1px solid #fcd34d;border-radius:12px;padding:10px 14px;font-size:12.5px;margin:12px 0;color:#451a03}
+.note.info{background:#f5f0e6;border-color:#e2d7c5;color:var(--mut)}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px}.ctl label{font-size:12px;color:var(--mut);font-weight:500}
+select,input[type=search]{font:inherit;font-size:12.5px;font-weight:600;padding:7px 12px;border:1px solid #d6cdbd;border-radius:12px;background:#fff;color:var(--ink);outline:none}select:focus,input:focus{border-color:var(--bur)}
+.seg{display:inline-flex;gap:6px;flex-wrap:wrap}.seg button{font:inherit;font-size:12px;font-weight:500;border:0;background:#eee9df;padding:6px 12px;cursor:pointer;color:var(--ink);border-radius:8px;transition:background .2s}.seg button:hover{background:#e2dacd}.seg button.on{background:var(--bur);color:#fff;box-shadow:0 1px 3px #0003}
+.chart{width:100%;position:relative}.chart svg{width:100%;height:auto;display:block}
+.tip{position:absolute;pointer-events:none;background:#1c1917ee;color:#fff;font-size:12px;padding:6px 10px;border-radius:8px;white-space:nowrap;z-index:5;display:none}
+.leg{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--mut);margin-top:6px}.leg i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:5px;border-radius:2px}.leg i.b{height:10px;opacity:.5}
+table{border-collapse:collapse;width:100%;font-size:12.5px}th,td{padding:8px 10px;border-bottom:1px solid #f2ece0;text-align:left}
+th{background:#faf7f1;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut);font-weight:700;position:sticky;top:0}th.s{cursor:pointer}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}td .tag{white-space:nowrap}
+.tw{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:12px}.tw.full{max-height:none}
+.bar{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:12.5px}.bar .nm{width:44%;min-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500}
+.bar .tr{flex:1;background:#eee8dc;border-radius:5px;height:14px}.bar .fl{height:100%;border-radius:5px;background:var(--bur)}.bar .val{width:120px;text-align:right;font-variant-numeric:tabular-nums;color:var(--mut);font-size:12px}.bar.si .fl{background:#bfb6a6}
+details{margin:6px 0}summary{cursor:pointer;font-weight:700;color:var(--bur);font-size:13px}
+.dl a{display:inline-block;margin:3px 8px 3px 0;padding:7px 12px;background:var(--bur);color:#fff;border-radius:12px;text-decoration:none;font-size:12px;font-weight:600}.dl a:hover{background:var(--burh)}
+.small{font-size:11.5px;color:var(--mut)}
+footer{padding:0 24px 40px;max-width:1280px;margin:0 auto;color:var(--mut);font-size:11.5px}
+#sidebar-backdrop{display:none}.hdr .rr{flex-wrap:wrap}.hdr .rr select{max-width:62vw}
+@media(max-width:1023px){#sidebar{position:fixed;top:0;bottom:0;left:0;max-width:85vw;transform:translateX(-100%);overflow-y:auto;z-index:50;margin-left:0!important;opacity:1!important;pointer-events:auto!important}#sidebar.mobile-open{transform:none}#sidebar-backdrop.show{display:block;position:fixed;inset:0;background:#1c191773;z-index:40}.g2{grid-template-columns:1fr}main{padding:16px}}
+</style></head>
+<body><div class="layout"><div id="sidebar-backdrop" onclick="toggleSidebar()"></div>
+<aside id="sidebar"><div>
+ <div class="logo"><div class="b"><i data-lucide="sprout" class="ic" style="width:20px;height:20px"></i></div><div><h1 class="serif">Observatorio</h1><p>SISMEL 3.0 · SALUD MENTAL</p></div></div>
+ <nav id="nav"></nav></div>
+ <div class="srcbox"><div class="r"><b>Fuente de datos</b><span class="pill">INMLCF</span></div><p>Registros 2015–2026 · <span id="hdr-per"></span></p><p>2025–2026 preliminares · Actualizado: <span id="hdr-act"></span></p></div>
+</aside>
+<div class="content">
+ <div class="sticky">
+  <div class="hot"><div class="l"><i data-lucide="heart" class="ic" style="color:#9b2c2c;fill:#9b2c2c"></i><span>Si tú o alguien cercano está pasando por un momento difícil, hay apoyo disponible.</span></div>
+   <div class="r"><span class="p1">Línea nacional de salud mental</span><span class="p2">Llama al 106 o chatea al 300 754 89 33</span><span style="font-weight:400;font-size:10px">Gratuitas · 24/7</span></div></div>
+  <header class="hdr"><div class="l"><button class="iconbtn" onclick="toggleSidebar()" title="Ocultar / Mostrar menú"><i data-lucide="panel-left" class="ic" style="width:20px;height:20px"></i></button><div><p class="k">OBSERVATORIO · COLOMBIA</p><h2 class="serif">Registros de suicidio · frecuencias y pronóstico</h2></div></div>
+   <div class="rr"><span>Territorio en foco:</span><select id="focus-sel"></select><button class="btnb" id="focus-nar"><i data-lucide="crosshair" class="ic"></i> Nariño</button></div></header>
+ </div>
+ <main>
+  <section class="mod" id="resumen"></section><section class="mod" id="evolucion"></section><section class="mod" id="pronostico"></section>
+  <section class="mod" id="territorial"></section><section class="mod" id="sociodemografica"></section><section class="mod" id="metodologia"></section>
+ </main>
+ <footer>SISMEL 3.0 · Proyecto académico (Especialización en Big Data, UNICESMAG). Todas las cifras son <b>conteos de registros</b> (frecuencias), no tasas ni riesgo individual, y no implican causalidad. Los datos de 2025–2026 son preliminares. Si tú o alguien cercano está pasando por un momento difícil: Línea 106 y 192, gratuitas, 24/7.</footer>
+</div></div>
+<script id="D" type="application/json">/*DATA*/</script>
+<script>
+"use strict";
+const D=JSON.parse(document.getElementById("D").textContent);
+const $=(s,r=document)=>r.querySelector(s);
+const fmt=(x,d=0)=>x==null||isNaN(x)?"—":Number(x).toLocaleString("es-CO",{minimumFractionDigits:d,maximumFractionDigits:d});
+const pct=(x,d=1)=>x==null||isNaN(x)?"—":(x>0?"+":"")+fmt(x,d)+" %";
+const MESES=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],MESESL=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+const fm=m=>{const[y,mm]=m.split("-");return MESES[+mm-1]+" "+y};
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const C={teal:"#9b2c2c",navy:"#1c1917",or:"#b45309",gr:"#a8a095",g2:"#d6cdbd"};
+const PAL=["#9b2c2c","#b45309","#5a4fa3","#2f7d4f","#b0396b","#8a6d1a"];
+const NAV=[["resumen","1 · Resumen nacional"],["evolucion","2 · Evolución histórica"],["pronostico","3 · Pronóstico de frecuencia"],["territorial","4 · Análisis territorial"],["sociodemografica","5 · Caracterización"],["metodologia","6 · Metodología y calidad"]];
+const PRE=new Set(D.meta.anios_preliminares), UA=+D.meses[D.meses.length-1].slice(0,4), UM=+D.meses[D.meses.length-1].slice(5);
+const nac=D.nacional, serie=nac.serie;
+const NOMDEP=Object.fromEntries(D.territorial.departamentos.map(d=>[d.key,d.departamento]));
+const ACC={"Narino":"Nariño","Atlantico":"Atlántico","Bolivar":"Bolívar","Boyaca":"Boyacá","Caqueta":"Caquetá","Choco":"Chocó","Cordoba":"Córdoba","Quindio":"Quindío","Guainia":"Guainía","Vaupes":"Vaupés","Bogota":"Bogotá","Medellin":"Medellín","Ibague":"Ibagué","Cucuta":"Cúcuta","Archipielago":"Archipiélago","Providencia":"Providencia","Basica":"Básica","Tecnica":"Técnica","tecnologica":"tecnológica","Informacion":"información","informacion":"información","Educacion":"Educación","Union":"Unión","Medico":"Médico","Atencion":"Atención","Clinica":"Clínica","Peru":"Perú","Panama":"Panamá","Mexico":"México","Maria":"María","Andres":"Andrés","Jose":"José","Monteria":"Montería","Popayan":"Popayán","Neiva":"Neiva","Sincelejo":"Sincelejo","Apartado":"Apartadó","Giron":"Girón","Fusagasuga":"Fusagasugá","Zipaquira":"Zipaquirá","Facatativa":"Facatativá","Itagui":"Itagüí","Tulua":"Tuluá","Cienaga":"Ciénaga","Sogamoso":"Sogamoso","Armenia":"Armenia","Valledupar":"Valledupar","Rionegro":"Rionegro","Yopal":"Yopal","Florencia":"Florencia","Mocoa":"Mocoa","Quibdo":"Quibdó"};
+const pretty0=s=>s.replace(/\b([A-ZÁÉÍÓÚÑ])([A-ZÁÉÍÓÚÑ]+)/g,(m,a,b)=>a+b.toLowerCase()).replace(/\b(De|Del|La|Y|Y)\b/g,x=>x.toLowerCase());
+const pretty=s=>pretty0(s).replace(/[A-Za-zÁÉÍÓÚÑáéíóúñ]+/g,w=>ACC[w]||w);
+const dname=k=>pretty(NOMDEP[k]||k);
+
+/* ---------- gráficos ---------- */
+function niceMax(v){const e=Math.pow(10,Math.floor(Math.log10(v||1)));for(const m of[1,1.5,2,2.5,3,4,5,6,8,10]) if(m*e>=v) return m*e;return v}
+function tip(box){let t=$(".tip",box);if(!t){t=document.createElement("div");t.className="tip";box.appendChild(t)}return t}
+/* cfg: labels[], fmtX, series:[{name,color,values[],dash,w}], band:{lo[],hi[],color,from}, shades:[{i0,i1,color}], h, yTitle */
+function line(box,cfg){
+  const W=900,H=cfg.h||300,m={l:48,r:14,t:12,b:30},iw=W-m.l-m.r,ih=H-m.t-m.b,n=cfg.labels.length;
+  let mx=0,mn=cfg.ymin0===false?Infinity:0;
+  cfg.series.forEach(s=>s.values.forEach(v=>{if(v!=null){mx=Math.max(mx,v);if(cfg.ymin0===false)mn=Math.min(mn,v)}}));
+  if(cfg.band)cfg.band.hi.forEach(v=>{if(v!=null)mx=Math.max(mx,v)});
+  mx=niceMax(mx*1.04);if(cfg.ymin0===false){mn=Math.floor(mn*.9/10)*10}
+  const X=i=>m.l+(n<2?0:i*iw/(n-1)),Y=v=>m.t+ih-(v-mn)/(mx-mn)*ih;
+  let g="";
+  for(let k=0;k<=4;k++){const v=mn+(mx-mn)*k/4,y=Y(v);g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${y}" y2="${y}" stroke="#eee8dc"/><text x="${m.l-6}" y="${y+4}" text-anchor="end" font-size="11" fill="#686259">${fmt(v)}</text>`}
+  (cfg.shades||[]).forEach(s=>{g+=`<rect x="${X(s.i0)}" y="${m.t}" width="${Math.max(X(s.i1)-X(s.i0),1)}" height="${ih}" fill="${s.color}" opacity=".35"/>`});
+  const step=Math.max(1,Math.ceil(n/(cfg.xticks||10)));
+  cfg.labels.forEach((l,i)=>{if(i%step===0||cfg.showAll)g+=`<text x="${X(i)}" y="${H-10}" text-anchor="middle" font-size="11" fill="#686259">${esc((cfg.fmtX||(x=>x))(l))}</text>`});
+  if(cfg.band){const b=cfg.band,pts=[];for(let i=b.from;i<n;i++)if(b.hi[i]!=null)pts.push([X(i),Y(b.hi[i])]);for(let i=n-1;i>=b.from;i--)if(b.lo[i]!=null)pts.push([X(i),Y(b.lo[i])]);g+=`<polygon points="${pts.map(p=>p.join(",")).join(" ")}" fill="${b.color}" opacity=".25"/>`}
+  cfg.series.forEach(s=>{let d="",open=false;s.values.forEach((v,i)=>{if(v==null){open=false;return}d+=(open?"L":"M")+X(i).toFixed(1)+" "+Y(v).toFixed(1);open=true});
+    g+=`<path d="${d}" fill="none" stroke="${s.color}" stroke-width="${s.w||2}" ${s.dash?`stroke-dasharray="${s.dash}"`:""} stroke-linejoin="round"/>`;
+    if(n<=40||s.dots)s.values.forEach((v,i)=>{if(v!=null)g+=`<circle cx="${X(i)}" cy="${Y(v)}" r="2.6" fill="${s.color}"/>`})});
+  g+=`<line id="cx" x1="0" x2="0" y1="${m.t}" y2="${m.t+ih}" stroke="#1c1917" stroke-opacity=".4" style="display:none"/>`;
+  if(cfg.yTitle)g+=`<text x="12" y="${m.t+ih/2}" transform="rotate(-90 12 ${m.t+ih/2})" text-anchor="middle" font-size="11" fill="#686259">${esc(cfg.yTitle)}</text>`;
+  box.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(cfg.alt||"Gráfico de líneas")}">${g}<rect x="${m.l}" y="${m.t}" width="${iw}" height="${ih}" fill="transparent" id="ov"/></svg>`;
+  const t=tip(box),svg=$("svg",box),ov=$("#ov",box),cx=$("#cx",box);
+  ov.addEventListener("mousemove",e=>{const r=svg.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W;let i=Math.round((px-m.l)/iw*(n-1));i=Math.max(0,Math.min(n-1,i));
+    let h=`<b>${esc((cfg.fmtTip||cfg.fmtX||(x=>x))(cfg.labels[i]))}</b>`;cfg.series.forEach(s=>{if(s.values[i]!=null)h+=`<br><span style="color:${s.color==="#1c1917"?"#9fd":s.color}">●</span> ${esc(s.name)}: ${fmt(s.values[i],s.dec||0)}`});
+    if(cfg.band&&i>=cfg.band.from&&cfg.band.lo[i]!=null)h+=`<br>Intervalo 80 %: ${fmt(cfg.band.lo[i])} – ${fmt(cfg.band.hi[i])}`;
+    if(cfg.extraTip&&cfg.extraTip[i])h+=`<br>${esc(cfg.extraTip[i])}`;
+    t.innerHTML=h;t.style.display="block";cx.setAttribute("x1",X(i));cx.setAttribute("x2",X(i));cx.style.display="";
+    const bx=box.getBoundingClientRect();let lx=e.clientX-bx.left+12;if(lx>bx.width-190)lx-=200;t.style.left=lx+"px";t.style.top=Math.max(0,e.clientY-bx.top-30)+"px"});
+  ov.addEventListener("mouseleave",()=>{t.style.display="none";cx.style.display="none"});
+}
+/* columnas: items [{label,value,pre,lo,hi}] */
+function cols(box,items,cfg={}){
+  const W=900,H=cfg.h||270,m={l:48,r:12,t:14,b:34},iw=W-m.l-m.r,ih=H-m.t-m.b,n=items.length;
+  let mx=Math.max(...items.map(i=>Math.max(i.value||0,i.hi||0)));mx=niceMax(mx*1.05);const mn=cfg.base0===false?0:0;
+  const bw=iw/n*.66,X=i=>m.l+iw/n*(i+.5),Y=v=>m.t+ih-v/mx*ih;
+  let g=`<defs><pattern id="hat" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="${C.or}" opacity=".25"/><line x1="0" y1="0" x2="0" y2="6" stroke="${C.or}" stroke-width="3"/></pattern></defs>`;
+  for(let k=0;k<=4;k++){const v=mx*k/4,y=Y(v);g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${y}" y2="${y}" stroke="#eee8dc"/><text x="${m.l-6}" y="${y+4}" text-anchor="end" font-size="11" fill="#686259">${fmt(v,cfg.dec||0)}</text>`}
+  if(cfg.ref!=null)g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(cfg.ref)}" y2="${Y(cfg.ref)}" stroke="#1c1917" stroke-dasharray="4 3"/>`;
+  items.forEach((it,i)=>{if(it.value==null)return;const y=Y(it.value);g+=`<rect x="${X(i)-bw/2}" y="${y}" width="${bw}" height="${Math.max(Y(0)-y,0)}" fill="${it.pre?"url(#hat)":C.teal}" ${it.pre?`stroke="${C.or}"`:""} rx="2" data-i="${i}"/>`;
+    if(it.lo!=null)g+=`<line x1="${X(i)}" x2="${X(i)}" y1="${Y(it.lo)}" y2="${Y(it.hi)}" stroke="#1c1917" stroke-width="1.5"/><line x1="${X(i)-5}" x2="${X(i)+5}" y1="${Y(it.lo)}" y2="${Y(it.lo)}" stroke="#1c1917"/><line x1="${X(i)-5}" x2="${X(i)+5}" y1="${Y(it.hi)}" y2="${Y(it.hi)}" stroke="#1c1917"/>`;
+    if(cfg.vals)g+=`<text x="${X(i)}" y="${y-4}" text-anchor="middle" font-size="11" fill="#1c1917">${fmt(it.value,cfg.dec||0)}</text>`;
+    g+=`<text x="${X(i)}" y="${H-14}" text-anchor="middle" font-size="11" fill="#686259">${esc(it.label)}</text>`});
+  box.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(cfg.alt||"Gráfico de columnas")}">${g}</svg>`;
+  const t=tip(box);box.querySelectorAll("rect[data-i]").forEach(r=>{r.addEventListener("mousemove",e=>{const it=items[+r.dataset.i];t.innerHTML=`<b>${esc(it.label)}</b><br>${esc(it.tip||fmt(it.value,cfg.dec||0))}`;t.style.display="block";const bx=box.getBoundingClientRect();t.style.left=Math.min(e.clientX-bx.left+10,bx.width-200)+"px";t.style.top=(e.clientY-bx.top-34)+"px"});r.addEventListener("mouseleave",()=>t.style.display="none")});
+}
+function hbars(box,items,cfg={}){const mx=Math.max(...items.map(i=>i.value||0),1);
+  box.innerHTML=items.map(i=>`<div class="bar ${i.si?"si":""}" title="${esc(i.title||"")}"><div class="nm" title="${esc(i.label)}">${esc(i.label)}</div><div class="tr"><div class="fl" style="width:${(i.value||0)/mx*100}%"></div></div><div class="val">${esc(i.text)}</div></div>`).join("")}
+function table(box,cols,rows,opt={}){let sort=opt.sort||null,asc=opt.asc!==false;
+  function draw(){let r=rows.slice();if(sort!=null){const c=cols[sort];r.sort((a,b)=>{let x=c.v(a),y=c.v(b);if(x==null)return 1;if(y==null)return -1;return(typeof x==="string"?x.localeCompare(y,"es"):x-y)*(asc?1:-1)})}
+    box.innerHTML=`<div class="tw ${opt.full?"full":""}"><table><thead><tr>${cols.map((c,i)=>`<th class="s ${c.n?"n":""}" data-c="${i}" scope="col">${esc(c.h)}${sort===i?(asc?" ▲":" ▼"):""}</th>`).join("")}</tr></thead><tbody>${r.map(x=>`<tr>${cols.map(c=>`<td class="${c.n?"n":""}">${c.f?c.f(x):esc(c.v(x))}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+    box.querySelectorAll("th.s").forEach(th=>th.onclick=()=>{const i=+th.dataset.c;if(sort===i)asc=!asc;else{sort=i;asc=!cols[i].n}draw()})}
+  draw()}
+const seg=(id,opts,cur)=>`<div class="seg" id="${id}">${opts.map(o=>`<button data-v="${o[0]}" class="${o[0]===cur?"on":""}">${o[1]}</button>`).join("")}</div>`;
+function segBind(id,cb){const e=$("#"+id);e.querySelectorAll("button").forEach(b=>b.onclick=()=>{e.querySelectorAll("button").forEach(x=>x.classList.remove("on"));b.classList.add("on");cb(b.dataset.v)})}
+const badge=e=>e==="APROBADO"?'<span class="tag t-ok">Aprobado</span>':e==="APROBADO_CON_RESERVAS"?'<span class="tag t-res">Aprobado con reservas</span>':e==="NO_APROBADO"?'<span class="tag t-no">No aprobado</span>':'<span class="tag t-no">Sin evaluación</span>';
+const PERIOD_NOTE=`<div class="note"><b>Datos preliminares.</b> Los años ${[...PRE].join(" y ")} están marcados como preliminares y ${UA} es parcial (enero–${MESESL[UM-1]}). Pueden cambiar con la consolidación del INMLCF.</div>`;
+const ANU=nac.anual, anuMap=Object.fromEntries(ANU.map(a=>[a.anio,a]));
+const HOM=Object.fromEntries(nac.mismo_periodo.map(a=>[a.anio,a]));
+
+
+const GEO=/*GEO*/;
+const SEQ=["#f7ece4","#ebc8bc","#d99a8c","#bb5a50","#7f1d1d"],DIV=["#3f6178","#a3bac8","#efeae0","#e8b4a8","#9b2c2c"];
+function bins(metric,vals){if(metric==="var_pct_12m")return{br:[-20,-5,5,20],col:DIV,lab:["Baja más de 20 %","Baja entre 5 % y 20 %","Casi sin cambio (±5 %)","Sube entre 5 % y 20 %","Sube más de 20 %"]};
+  const v=vals.filter(x=>x!=null).sort((a,b)=>a-b),q=p=>v[Math.min(v.length-1,Math.floor(p*v.length))];const br=[q(.2),q(.4),q(.6),q(.8)].map(x=>Math.round(x*10)/10);
+  const f=x=>fmt(x,metric==="media_mensual"?1:0);
+  return{br,col:SEQ,lab:[`Menos de ${f(br[0])}`,`${f(br[0])} a ${f(br[1])}`,`${f(br[1])} a ${f(br[2])}`,`${f(br[2])} a ${f(br[3])}`,`${f(br[3])} o más`]}}
+function binOf(b,v){if(v==null)return -1;let i=0;while(i<4&&v>=b.br[i])i++;return i}
+function colombiaMap(box,leg,metric,sel,onSel){
+  const deps=D.territorial.departamentos,B=bins(metric,deps.map(d=>d[metric])),byCod=Object.fromEntries(deps.map(d=>[+d.cod_depto,d]));
+  let g="";Object.entries(GEO.g).forEach(([cod,o])=>{const d=byCod[+cod];if(!d)return;const bi=binOf(B,d[metric]),fill=bi<0?"#e8e2d5":B.col[bi];
+    g+=`<path data-c="${cod}" d="${o.d}" fill="${fill}" stroke="${d.key===sel?"#b45309":"#fff"}" stroke-width="${d.key===sel?2.6:.9}" stroke-linejoin="round"/>`});
+  [88,11].forEach(cod=>{const o=GEO.g[cod],d=byCod[cod];if(!o||!d)return;const bi=binOf(B,d[metric]);g+=`<circle data-c="${cod}" cx="${o.c[0]+(cod===88?8:0)}" cy="${o.c[1]+(cod===88?8:0)}" r="${cod===88?5:7}" fill="${bi<0?"#e8e2d5":B.col[bi]}" stroke="${d.key===sel?"#b45309":"#b45309"}" stroke-width="${d.key===sel?3:1.6}"/>`});
+  g+=`<text x="2" y="30" font-size="10" fill="#686259">San Andrés y Prov.</text><text x="274" y="294" font-size="10" fill="#1c1917" font-weight="600" stroke="#fff" stroke-width="2.5" paint-order="stroke">Bogotá</text>`;
+  box.innerHTML=`<svg viewBox="-8 -8 ${GEO.w+16} ${GEO.h+16}" role="img" aria-label="Mapa de Colombia por departamento: ${esc(MET[metric][0])}" style="max-height:560px">${g}</svg>`;
+  const t=tip(box),vf=(d,m)=>d[m]==null?"sin dato comparable":(m==="var_pct_12m"?pct(d[m]):fmt(d[m],m==="media_mensual"?1:0)+" "+(MET[m][1]));
+  box.querySelectorAll("[data-c]").forEach(e=>{const d=byCod[+e.dataset.c];e.style.cursor="pointer";
+    e.addEventListener("mousemove",ev=>{t.innerHTML=`<b>${esc(dname(d.key))}</b><br>${esc(MET[metric][0])}: ${vf(d,metric)}<br>Total del periodo: ${fmt(d.total_periodo)}`;t.style.display="block";const bx=box.getBoundingClientRect();t.style.left=Math.min(ev.clientX-bx.left+12,bx.width-220)+"px";t.style.top=(ev.clientY-bx.top-10)+"px"});
+    e.addEventListener("mouseleave",()=>t.style.display="none");e.addEventListener("click",()=>onSel&&onSel(d.key))});
+  leg.innerHTML=`<div style="display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:6px">${B.lab.map((l,i)=>`<span style="font-size:12px;color:#524c42"><i style="display:inline-block;width:14px;height:14px;border-radius:3px;background:${B.col[i]};vertical-align:-3px;margin-right:4px;border:1px solid #d6cdbd"></i>${esc(l)}</span>`).join("")}<span style="font-size:12px;color:#524c42"><i style="display:inline-block;width:14px;height:14px;border-radius:3px;background:#e8e2d5;vertical-align:-3px;margin-right:4px;border:1px solid #d6cdbd"></i>Sin dato comparable</span></div>`}
+
+/* ---------- 1. RESUMEN ---------- */
+function mResumen(){
+  const tot=D.calidad.resumen.registros_serie_nacional,a24=anuMap[UA-2],a25=anuMap[UA-1],a26=anuMap[UA],h=HOM[UA];
+  const dseries=D.territorial.departamentos,top=dseries.slice().sort((a,b)=>b.total_periodo-a.total_periodo).slice(0,8);
+  $("#resumen").innerHTML=`<div class="flex flex-wrap gap-2"><span class="badge-pill"><i data-lucide="file-text" class="ic"></i> Instituto Nacional de Medicina Legal y Ciencias Forenses (INMLCF) · registros 2015–2026</span><span class="badge-pill"><i data-lucide="bar-chart-2" class="ic"></i> Conteos de registros, no tasas</span></div>
+ <div class="hero"><div class="hero-l"><h1 class="serif">Entender las cifras para prevenir: <br><span class="it">frecuencia de registros de suicidio</span> en Colombia</h1><p class="lead" style="margin-top:10px">Un observatorio que describe cómo han evolucionado los registros de muerte por suicidio del INMLCF, dónde se concentran, a quiénes corresponden y cuántos se proyectan para los próximos meses. Los datos de 2025–2026 son preliminares. Cada cifra es una vida y una familia: el objetivo es orientar la prevención y la política pública.</p></div>
+ <div class="ethic"><div class="ethic-t"><i data-lucide="shield-check" class="ic"></i> Tratamiento ético</div><p>Cifras agregadas y anonimizadas. No se muestran datos personales, el mecanismo ni grupos pequeños identificables, y los conteos menores de 5 se suprimen. El tablero no estima riesgo individual ni explica causas.</p></div></div>${PERIOD_NOTE}
+  <div class="grid g4">
+   <div class="card kpi"><div class="l">Registros en el periodo</div><div class="v">${fmt(tot)}</div><div class="s">${fm(D.meta.primer_mes)} – ${fm(D.meta.fecha_corte)} · ${D.calidad.resumen.meses} meses</div></div>
+   <div class="card kpi"><div class="l">${UA-2} (consolidado)</div><div class="v">${fmt(a24.registros)}</div><div class="s">${pct(a24.var_pct_vs_anio_previo)} vs. ${UA-3}</div></div>
+   <div class="card kpi"><div class="l">${UA-1} <span class="tag t-pre">preliminar</span></div><div class="v">${fmt(a25.registros)}</div><div class="s">${pct(a25.var_pct_vs_anio_previo)} vs. ${UA-2}</div></div>
+   <div class="card kpi"><div class="l">${UA} ene–${MESES[UM-1]} <span class="tag t-pre">preliminar</span></div><div class="v">${fmt(h.registros_mismo_periodo)}</div><div class="s">${pct(h.var_pct_vs_anio_previo)} vs. mismo periodo ${UA-1}</div></div>
+   <div class="card kpi"><div class="l">Promedio mensual</div><div class="v">${fmt(tot/D.calidad.resumen.meses,0)}</div><div class="s">registros por mes (periodo completo)</div></div>
+   <div class="card kpi"><div class="l">Datos preliminares</div><div class="v">${fmt(D.calidad.resumen.pct_preliminares,1)} %</div><div class="s">de los registros (${[...PRE].join("–")})</div></div>
+   <div class="card kpi"><div class="l">Departamentos</div><div class="v">${D.calidad.resumen.departamentos_totales}</div><div class="s">${D.calidad.resumen.departamentos_modelables} con serie suficiente para pronóstico</div></div>
+   <div class="card kpi"><div class="l">Registros sin departamento</div><div class="v">${fmt(D.calidad.resumen.registros_sin_departamento)}</div><div class="s">${fmt(D.calidad.resumen.registros_sin_fecha_excluidos)} sin fecha, excluidos de series</div></div>
+  </div>
+  <div class="grid g2" style="margin-top:14px">
+   <div class="card"><h3>Mapa de Colombia: registros por departamento</h3><div class="ctl"><label>Mostrar <select id="rm-met"><option value="total_periodo">Total del periodo (2015–2026)</option><option value="ult12">Últimos 12 meses</option><option value="var_pct_12m">Cambio frente a los 12 meses anteriores</option></select></label></div><div class="chart" id="rm"></div><div id="rm-leg"></div><div class="small" style="margin-top:6px">Pase el cursor o toque un departamento para ver su cifra. <b>Son conteos, no tasas:</b> los departamentos con más habitantes tienen más registros, y eso no significa que sus habitantes tengan mayor riesgo.</div></div>
+   <div class="card"><h3>Lo más importante en pocas palabras</h3><ul id="rm-key" style="margin:0;padding-left:18px;font-size:14.5px;line-height:1.65"></ul><div style="margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-size:13.5px"><b>¿Qué puede explorar?</b><br>• <a href="#evolucion">Evolución histórica:</a> cómo han cambiado los registros por mes y por año.<br>• <a href="#pronostico">Pronóstico:</a> cuántos registros se esperan en los próximos 6 o 12 meses.<br>• <a href="#territorial">Territorio:</a> su departamento o municipio en detalle.<br>• <a href="#sociodemografica">Caracterización:</a> sexo, edad, escolaridad, estado civil y zona.<br>• <a href="#metodologia">Metodología:</a> de dónde salen los datos y qué tan confiables son.</div><details style="margin-top:10px" open><summary>¿Cómo leer este tablero?</summary><div class="small" style="font-size:13px;line-height:1.55;margin-top:6px"><b>Registro:</b> un caso de muerte por suicidio reportado al INMLCF; aquí solo se cuentan, sin datos personales.<br><b>Conteo vs. tasa:</b> mostramos cuántos registros hay, no cuántos por cada 100.000 habitantes; por eso no se comparan territorios como si fueran de igual riesgo.<br><b>Preliminar:</b> dato reciente que todavía puede cambiar cuando el INMLCF lo consolide (2025 y 2026).<br><b>Pronóstico:</b> una proyección estadística de cuántos registros se esperan por mes si todo sigue como en el pasado; no anticipa casos individuales.<br><b>Intervalo del 80 %:</b> la franja donde esperamos que caiga el valor real; si las líneas fueran más inciertas, la franja sería más ancha.<br><b>Backtesting:</b> prueba en que el modelo "pronostica" meses pasados que ya conocemos para ver si acierta más que un método simple.</div></details></div>
+  </div>
+  <div class="grid g2" style="margin-top:14px">
+   <div class="card"><h3>Registros mensuales a nivel nacional</h3><div class="chart" id="r-mes"></div><div class="leg"><span><i style="background:${C.teal}"></i>Registros del mes</span><span><i class="b" style="background:${C.or}"></i>Meses preliminares</span></div></div>
+   <div class="card"><h3>Registros por año</h3><div class="chart" id="r-anio"></div><div class="small">Rayado = año preliminar${UM<12?`; ${UA} solo incluye enero–${MESESL[UM-1]}`:""}.</div></div>
+   <div class="card"><h3>Distribución territorial (8 departamentos con más registros)</h3><div id="r-dep"></div><div class="small" style="margin-top:6px">Participación sobre el total del periodo. Son conteos, no tasas: los departamentos más poblados concentran más registros.</div></div>
+   <div class="card"><h3>Calidad y cobertura de los datos</h3><div id="r-cal"></div></div>
+  </div>`;
+  line($("#r-mes"),{labels:D.meses,fmtX:m=>m.slice(0,4),fmtTip:fm,xticks:12,series:[{name:"Registros",color:C.teal,values:serie.map(s=>s.n),w:1.8}],shades:[{i0:serie.findIndex(s=>s.prelim),i1:serie.length-1,color:C.or2||"#fbeab9"}],alt:"Serie mensual nacional de registros"});
+  cols($("#r-anio"),ANU.map(a=>({label:String(a.anio)+(a.parcial?"*":""),value:a.registros,pre:a.estado==="preliminar",tip:fmt(a.registros)+" registros"+(a.estado==="preliminar"?" (preliminar)":"")+(a.parcial?` · ${a.meses} meses`:"")})),{vals:true,alt:"Registros por año"});
+  const rmDraw=()=>colombiaMap($("#rm"),$("#rm-leg"),$("#rm-met").value,null,k=>setFocus(k,"territorial"));$("#rm-met").onchange=rmDraw;rmDraw();
+  {const p6=D.pronostico.nacional.H6,pm=p6.puntos.reduce((a,b)=>a+b.pronostico,0)/p6.puntos.length,t3=top.slice(0,3),sh=t3.reduce((a,b)=>a+b.participacion_pct,0);
+   $("#rm-key").innerHTML=[`Entre ${fm(D.meta.primer_mes)} y ${fm(D.meta.fecha_corte)} el INMLCF registró <b>${fmt(tot)}</b> muertes por suicidio, unas <b>${fmt(tot/D.calidad.resumen.meses,0)} por mes</b>.`,
+    `El último año consolidado (${UA-2}) tuvo <b>${fmt(a24.registros)}</b> registros (${pct(a24.var_pct_vs_anio_previo)} frente a ${UA-3}).`,
+    `En enero–${MESESL[UM-1]} de ${UA} hay <b>${fmt(h.registros_mismo_periodo)}</b> registros, <b>${pct(h.var_pct_vs_anio_previo)}</b> frente al mismo periodo de ${UA-1}. <span class="tag t-pre">preliminar</span>`,
+    `${t3.map(d=>dname(d.key)).join(", ")} concentran el <b>${fmt(sh,0)} %</b> de los registros; son también los territorios más poblados.`,
+    `Para los próximos 6 meses se proyectan unos <b>${fmt(pm,0)} registros por mes</b> a nivel nacional (pronóstico con reservas; ver módulo 3).`].map(x=>`<li>${x}</li>`).join("")}
+  hbars($("#r-dep"),top.map(d=>({label:dname(d.key),value:d.total_periodo,text:`${fmt(d.total_periodo)} · ${fmt(d.participacion_pct,1)} %`})));
+  const cr=D.calidad.resumen;
+  $("#r-cal").innerHTML=`<ul style="margin:0;padding-left:18px;font-size:13.5px"><li>Cobertura temporal continua nacional: <b>${cr.meses} de ${cr.meses}</b> meses.</li><li>Registros preliminares: <b>${fmt(cr.registros_preliminares)}</b> (${fmt(cr.pct_preliminares,1)} %), todos de ${[...PRE].join(" y ")}.</li><li>${D.territorial.departamentos.filter(d=>d.pct_cobertura<95).length} departamentos tienen meses sin dato observado (se muestran como vacíos, no como cero).</li><li>No se eliminaron duplicados, preliminares ni causas desconocidas; se marcan y se analizan en sensibilidad.</li></ul><div style="margin-top:8px"><b style="font-size:13px">Alertas de calidad:</b><ul style="margin:4px 0 0;padding-left:18px;font-size:13px;color:var(--mut)">${cr.alertas_calidad.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><p class="small">Detalle en el módulo <a href="#metodologia">6 · Metodología y calidad</a>.</p>`;
+}
+
+/* ---------- 2. EVOLUCIÓN ---------- */
+function mEvolucion(){
+  const yrs=ANU.map(a=>a.anio);
+  $("#evolucion").innerHTML=`<div class="space-y-1 mhead"><p class="kick">MÓDULO 02 · SERIE 2015–2026 (2026 PARCIAL)</p><h2 class="serif">Evolución histórica</h2></div><p class="lead">Serie mensual y anual, tendencia, estacionalidad y comparación entre periodos. Descriptivo: no se atribuyen causas a los cambios.</p>${PERIOD_NOTE}
+  <div class="card"><div class="ctl">${seg("ev-vista",[["m","Mensual"],["a","Anual"]],"m")}<label><input type="checkbox" id="ev-ma" checked> Media móvil de 12 meses</label></div><div class="chart" id="ev-ch"></div><div class="leg" id="ev-leg"></div></div>
+  <div class="grid g2" style="margin-top:14px">
+   <div class="card"><h3>Tendencia del periodo consolidado</h3><div id="ev-tend"></div></div>
+   <div class="card"><h3>Estacionalidad (años consolidados ${nac.est_test.anios_usados[0]}–${nac.est_test.anios_usados.slice(-1)[0]})</h3><div class="chart" id="ev-est"></div><div class="small" id="ev-est-t"></div></div>
+  </div>
+  <div class="card" style="margin-top:14px"><h3>Comparación entre periodos</h3>
+   <div class="ctl"><label>Año A <select id="cmpA">${yrs.map(y=>`<option ${y===UA-1?"selected":""}>${y}</option>`).join("")}</select></label><label>Año B <select id="cmpB">${yrs.map(y=>`<option ${y===UA?"selected":""}>${y}</option>`).join("")}</select></label><label><input type="checkbox" id="cmpH" checked> Solo meses comunes (enero–${MESES[UM-1]})</label></div>
+   <div class="grid g2"><div><div class="chart" id="cmp-ch"></div><div class="leg" id="cmp-leg"></div></div><div id="cmp-res"></div></div></div>
+  <div class="card" style="margin-top:14px"><h3>Periodos homogéneos: enero–${MESES[UM-1]} de cada año</h3><div id="ev-hom"></div><div class="small">Se compara el mismo tramo del año para no contrastar un año parcial con uno completo.</div></div>`;
+  const draw=()=>{const v=$("#ev-vista .on").dataset.v;
+    if(v==="m"){const ma=$("#ev-ma").checked;const ser=[{name:"Registros del mes",color:C.teal,values:serie.map(s=>s.n),w:1.6}];if(ma)ser.push({name:"Media móvil 12 m",color:C.navy,values:nac.ma12,w:2.6});
+      line($("#ev-ch"),{labels:D.meses,fmtX:m=>m.slice(0,4),fmtTip:fm,xticks:12,series:ser,shades:[{i0:serie.findIndex(s=>s.prelim),i1:serie.length-1,color:"#fbeab9"}],alt:"Serie mensual nacional"});
+      $("#ev-leg").innerHTML=`<span><i style="background:${C.teal}"></i>Mensual</span>${ma?`<span><i style="background:${C.navy}"></i>Media móvil 12 meses</span>`:""}<span><i class="b" style="background:${C.or}"></i>Preliminar</span>`}
+    else{cols($("#ev-ch"),ANU.map(a=>({label:a.anio+(a.parcial?"*":""),value:a.registros,pre:a.estado==="preliminar",tip:`${fmt(a.registros)} registros${a.var_pct_vs_anio_previo!=null?" · "+pct(a.var_pct_vs_anio_previo)+" vs. año previo":""}${a.parcial?" · año parcial ("+a.meses+" meses)":""}`})),{vals:true});$("#ev-leg").innerHTML=`<span>* año parcial · rayado = preliminar</span>`}};
+  segBind("ev-vista",draw);$("#ev-ma").onchange=draw;draw();
+  const t=nac.tendencia;
+  $("#ev-tend").innerHTML=`<p style="margin:0 0 6px">Entre ${t.anios[0]} y ${t.anios.slice(-1)[0]} (años consolidados), los registros anuales variaron en promedio <b>${pct(t.var_media_anual_pct,1)} por año</b> (IC 95 %: ${pct(t.ic95_inf_pct,1)} a ${pct(t.ic95_sup_pct,1)}).</p><p class="small">Método: ${esc(t.metodo)}. Describe el periodo observado; no es una proyección ni explica causas. La serie incluye un descenso en 2020 y una recuperación posterior que esta pendiente lineal promedia.</p>${seasonalNote()}`;
+  const es=nac.estacionalidad;
+  cols($("#ev-est"),es.map(e=>({label:MESES[e.mes-1],value:e.indice_medio,lo:e.indice_min,hi:e.indice_max,tip:`Índice medio ${fmt(e.indice_medio,2)} (rango entre años ${fmt(e.indice_min,2)}–${fmt(e.indice_max,2)}) · promedio ${fmt(e.promedio_registros,0)} registros`})),{dec:2,ref:1,h:250,alt:"Índice estacional mensual"});
+  $("#ev-est-t").innerHTML=`Índice 1,0 = promedio mensual del año; barras de error = mínimo y máximo entre años. Prueba χ² frente a distribución mensual uniforme (ajustada por días): χ²=${fmt(nac.est_test.chi2,1)}, gl=11, p=${fmt(nac.est_test.p_valor,2)}.`;
+  const cmp=()=>{const A=+$("#cmpA").value,B=+$("#cmpB").value,h=$("#cmpH").checked;const gv=y=>MESES.map((_,i)=>{const s=serie.find(x=>x.m===`${y}-${String(i+1).padStart(2,"0")}`);return s?s.n:null});
+    const a=gv(A),b=gv(B);line($("#cmp-ch"),{labels:MESES,showAll:true,h:250,series:[{name:String(A),color:C.gr,values:a,dots:true},{name:String(B),color:C.teal,values:b,dots:true}],alt:"Comparación mensual entre dos años"});
+    $("#cmp-leg").innerHTML=`<span><i style="background:${C.gr}"></i>${A}${PRE.has(A)?" (prelim.)":""}</span><span><i style="background:${C.teal}"></i>${B}${PRE.has(B)?" (prelim.)":""}</span>`;
+    const lim=h?Math.min(a.filter(x=>x!=null).length,b.filter(x=>x!=null).length):12;const sa=a.slice(0,lim).reduce((x,y)=>x+y,0),sb=b.slice(0,lim).reduce((x,y)=>x+y,0);
+    $("#cmp-res").innerHTML=`<table><tbody><tr><th>Periodo comparado</th><td>enero–${MESESL[lim-1]}</td></tr><tr><th>${A}</th><td class="n">${fmt(sa)}</td></tr><tr><th>${B}</th><td class="n">${fmt(sb)}</td></tr><tr><th>Diferencia</th><td class="n">${fmt(sb-sa)}</td></tr><tr><th>Variación</th><td class="n">${pct((sb/sa-1)*100)}</td></tr></tbody></table><p class="small">Un cambio entre años puede deberse al azar, a la consolidación de datos preliminares o a cambios de registro; no se interpreta como causal.</p>`};
+  ["cmpA","cmpB","cmpH"].forEach(i=>$("#"+i).onchange=cmp);cmp();
+  table($("#ev-hom"),[{h:"Año",v:r=>r.anio,f:r=>r.anio+(PRE.has(r.anio)?' <span class="tag t-pre">prelim.</span>':"")},{h:"Registros (mismo periodo)",n:1,v:r=>r.registros_mismo_periodo,f:r=>fmt(r.registros_mismo_periodo)},{h:"Variación vs. año previo",n:1,v:r=>r.var_pct_vs_anio_previo,f:r=>pct(r.var_pct_vs_anio_previo)}],nac.mismo_periodo,{full:true,sort:0});
+}
+function seasonalNote(){const e=nac.estacionalidad.slice().sort((a,b)=>b.indice_medio-a.indice_medio);return `<p class="small">Estacionalidad: el patrón mensual no es estadísticamente distinguible de la distribución uniforme por días (p=${fmt(nac.est_test.p_valor,2)}); se observa un índice medio mayor en ${MESESL[e[0].mes-1]} y menor en ${MESESL[e.slice(-1)[0].mes-1]}, con amplio solapamiento entre años.</p>`}
+
+/* ---------- 3. PRONÓSTICO ---------- */
+const ST={H:"H6",ter:"NACIONAL"};
+function mPron(){
+  const dk=Object.keys(D.pronostico.departamental.H12).sort((a,b)=>dname(a).localeCompare(dname(b),"es"));
+  $("#pronostico").innerHTML=`<div class="space-y-1 mhead"><p class="kick">MÓDULO 03 · BACKTESTING H6 · H12</p><h2 class="serif">Pronóstico de frecuencia</h2></div><p class="lead">Proyección estadística de los registros mensuales de los próximos 6 o 12 meses, con intervalo de incertidumbre del 80 %. Es una <b>proyección de conteos bajo continuidad histórica</b>, no una predicción de eventos individuales.</p>
+  <div class="note info"><b>Cómo leerlo.</b> Las líneas son el valor esperado; la banda sombreada es el intervalo del 80 % calculado con los errores de backtesting. En la práctica, la cobertura observada es menor que la nominal (ver indicador). Solo se publican pronósticos de territorios que superaron la validación histórica (backtesting).</div>
+  <div class="card"><div class="ctl"><label>Horizonte</label>${seg("pr-h",[["H6","6 meses"],["H12","12 meses"]],ST.H)}<label>Territorio <select id="pr-ter"><option value="NACIONAL">Nacional</option>${dk.map(k=>`<option value="${k}">${esc(dname(k))}</option>`).join("")}</select></label></div><div id="pr-body"></div></div>
+  <div class="card" style="margin-top:14px"><h3>Territorios con pronóstico</h3><div id="pr-tab"></div></div>`;
+  $("#pr-ter").value=ST.ter;
+  const draw=()=>{const H=ST.H,ter=ST.ter;let info,pts,ys,ttl;
+    if(ter==="NACIONAL"){info=D.pronostico.nacional[H];pts=info.puntos;ys=serie.map(s=>s.n);ttl="Nacional";
+      info={modelo:info.modelo.modelo,estado:info.modelo.estado,mase:info.modelo.mase,win:info.modelo.prop_supera_naive,cob:info.cobertura.cobertura_honesta,regla:info.modelo.regla}}
+    else{const o=D.pronostico.departamental[H][ter];if(!o){$("#pr-body").innerHTML=`<div class="note">No hay pronóstico para este territorio.</div>`;return}pts=o.puntos;const dep=D.territorial.departamentos.find(d=>d.key===ter);ys=dep.serie;ttl=dname(ter);info={modelo:o.modelo,estado:o.estado,mase:o.mase,win:o.prop_supera_naive,cob:o.cobertura_honesta}}
+    const hist=36,hl=D.meses.slice(-hist),hv=ys.slice(-hist),fl=pts.map(p=>p.fecha),labels=hl.concat(fl),n0=hl.length;
+    const pad=a=>new Array(n0).fill(null).concat(a),lo=new Array(labels.length).fill(null),hi=lo.slice();pts.forEach((p,i)=>{lo[n0+i]=p.pi80_inf;hi[n0+i]=p.pi80_sup});
+    const conn=hv.slice();const fv=pad(pts.map(p=>p.pronostico));fv[n0-1]=hv[n0-1];
+    const nova=info.estado==="NO_APROBADO";
+    $("#pr-body").innerHTML=`<h3 style="margin-top:6px">${esc(ttl)} · próximos ${H.slice(1)} meses (${fm(fl[0])} – ${fm(fl.slice(-1)[0])})</h3>
+     ${nova?`<div class="note"><b>Solo referencia.</b> Este horizonte <b>no superó</b> la validación histórica a nivel nacional (no mejora de forma consistente al pronóstico ingenuo). Se muestra únicamente como referencia y no debe usarse para decisiones; el pronóstico a 6 meses tiene mejor respaldo.</div>`:""}
+     <div class="chart" id="pr-ch"></div>
+     <div class="leg"><span><i style="background:${C.navy}"></i>Observado (últimos 36 meses)</span><span><i style="background:${C.or}"></i>Pronóstico</span><span><i class="b" style="background:${C.or}"></i>Intervalo 80 %</span></div>
+     <div class="grid g4" style="margin-top:12px"><div class="card kpi"><div class="l">Modelo</div><div class="v" style="font-size:18px">${esc(info.modelo.replace(/_/g," "))}</div><div class="s">${badge(info.estado)}</div></div>
+      <div class="card kpi"><div class="l">MASE en backtesting</div><div class="v">${fmt(info.mase,2)}</div><div class="s">&lt; 1 = mejor que el pronóstico ingenuo</div></div>
+      <div class="card kpi"><div class="l">Supera al ingenuo</div><div class="v">${fmt(info.win*100,0)} %</div><div class="s">de los orígenes evaluados</div></div>
+      <div class="card kpi"><div class="l">Cobertura observada del IC 80 %</div><div class="v">${info.cob==null?"—":fmt(info.cob*100,0)+" %"}</div><div class="s">nominal 80 % (evaluada solo con orígenes previos)</div></div></div>
+     <div id="pr-pts" style="margin-top:12px"></div>
+     <p class="small">El pronóstico se reajusta con todos los datos hasta ${fm(D.meta.fecha_corte)}. Los últimos meses observados son preliminares y pueden cambiar. Un modelo "ingenuo" repite el último valor; los modelos elegidos son en su mayoría promedios simples, coherentes con conteos pequeños y ruidosos.</p>`;
+    line($("#pr-ch"),{labels,fmtX:fm,xticks:9,h:300,series:[{name:"Observado",color:C.navy,values:hv.concat(new Array(fl.length).fill(null)),w:2},{name:"Pronóstico",color:C.or,values:fv,dash:"6 4",w:2.4,dots:true}],band:{lo,hi,color:C.or,from:n0},shades:[{i0:n0-0.5,i1:labels.length-1,color:"#fdf6df"}],alt:"Observado y pronóstico con intervalo"});
+    table($("#pr-pts"),[{h:"Mes",v:p=>p.fecha,f:p=>fm(p.fecha)},{h:"Pronóstico",n:1,v:p=>p.pronostico,f:p=>fmt(p.pronostico,0)},{h:"Límite inferior (80 %)",n:1,v:p=>p.pi80_inf,f:p=>fmt(p.pi80_inf,0)},{h:"Límite superior (80 %)",n:1,v:p=>p.pi80_sup,f:p=>fmt(p.pi80_sup,0)}],pts,{full:true,sort:0})};
+  segBind("pr-h",v=>{ST.H=v;draw();tabla()});$("#pr-ter").onchange=e=>{ST.ter=e.target.value;syncHdr(ST.ter);draw()};
+  function tabla(){const H=ST.H;const rows=[{key:"NACIONAL",n:"Nacional",...(()=>{const m=D.pronostico.nacional[H];return{modelo:m.modelo.modelo,estado:m.modelo.estado,mase:m.modelo.mase,win:m.modelo.prop_supera_naive,cob:m.cobertura.cobertura_honesta,p:m.puntos}})()}].concat(Object.entries(D.pronostico.departamental[H]).map(([k,o])=>({key:k,n:dname(k),modelo:o.modelo,estado:o.estado,mase:o.mase,win:o.prop_supera_naive,cob:o.cobertura_honesta,p:o.puntos})));
+    table($("#pr-tab"),[{h:"Territorio",v:r=>r.n,f:r=>`<a href="#pronostico" data-t="${r.key}">${esc(r.n)}</a>`},{h:"Modelo",v:r=>r.modelo,f:r=>esc(r.modelo.replace(/_/g," "))},{h:"Estado",v:r=>r.estado,f:r=>badge(r.estado)},{h:"MASE",n:1,v:r=>r.mase,f:r=>fmt(r.mase,2)},{h:"Cobertura IC 80 %",n:1,v:r=>r.cob,f:r=>r.cob==null?"—":fmt(r.cob*100,0)+" %"},{h:"Total pronosticado "+H.slice(1)+" m",n:1,v:r=>r.p.reduce((a,b)=>a+b.pronostico,0),f:r=>fmt(r.p.reduce((a,b)=>a+b.pronostico,0))}],rows,{sort:0});
+    $("#pr-tab").querySelectorAll("a[data-t]").forEach(a=>a.onclick=e=>{e.preventDefault();ST.ter=a.dataset.t;$("#pr-ter").value=ST.ter;syncHdr(ST.ter);draw();$("#pr-ter").scrollIntoView({behavior:"smooth",block:"center"})});
+    $("#pr-tab").insertAdjacentHTML("beforeend",`<p class="small">Sin pronóstico (serie insuficiente o con brechas de cobertura / sin validación): ${D.pronostico.sin_pronostico[H].map(x=>esc(pretty(x))).join(", ")}. Solo se muestra su evolución histórica en el módulo 4.</p>`)}
+  draw();tabla();
+}
+
+/* ---------- 4. TERRITORIAL ---------- */
+const GRID={"ARCHIPIELAGO DE SAN ANDRES PROVIDENCIA Y SANTA CATALINA":[1,0,"SAP"],"ATLANTICO":[4,0,"ATL"],"MAGDALENA":[5,0,"MAG"],"LA GUAJIRA":[6,0,"GUA"],"CORDOBA":[2,1,"COR"],"SUCRE":[3,1,"SUC"],"BOLIVAR":[4,1,"BOL"],"CESAR":[5,1,"CES"],"NORTE DE SANTANDER":[6,1,"NSA"],"ARAUCA":[7,1,"ARA"],"CHOCO":[1,2,"CHO"],"ANTIOQUIA":[3,2,"ANT"],"CALDAS":[4,2,"CAL"],"SANTANDER":[5,2,"SAN"],"BOYACA":[6,2,"BOY"],"CASANARE":[7,2,"CAS"],"VALLE DEL CAUCA":[2,3,"VAL"],"RISARALDA":[3,3,"RIS"],"QUINDIO":[4,3,"QUI"],"CUNDINAMARCA":[5,3,"CUN"],"BOGOTA D C":[6,3,"BOG"],"META":[7,3,"MET"],"VICHADA":[8,3,"VIC"],"CAUCA":[2,4,"CAU"],"TOLIMA":[4,4,"TOL"],"HUILA":[5,4,"HUI"],"GUAVIARE":[7,4,"GVR"],"GUAINIA":[8,4,"GNA"],"NARINO":[2,5,"NAR"],"CAQUETA":[6,5,"CAQ"],"VAUPES":[8,5,"VAU"],"PUTUMAYO":[5,6,"PUT"],"AMAZONAS":[7,6,"AMA"]};
+const TS={met:"total_periodo",sel:null};
+const MET={total_periodo:["Total del periodo (2015–2026)","registros"],ult12:["Últimos 12 meses","registros"],var_pct_12m:["Cambio frente a los 12 meses anteriores","%"],media_mensual:["Promedio mensual","registros/mes"]};
+function mTerr(){
+  const deps=D.territorial.departamentos;TS.sel=TS.sel||"NARINO";
+  $("#territorial").innerHTML=`<div class="space-y-1 mhead"><p class="kick">MÓDULO 04 · DEPARTAMENTOS · MUNICIPIOS</p><h2 class="serif">Análisis territorial</h2></div><p class="lead">¿Dónde se concentran los registros y cómo han cambiado? Aquí puede explorar cada departamento y municipio, su evolución y, cuando es estadísticamente confiable, su pronóstico. Son <b>conteos de registros</b>: no se ajustan por población, por lo que no miden ni comparan el riesgo entre territorios.</p>${PERIOD_NOTE}
+  <div class="grid g2"><div class="card"><h3>Mapa de Colombia por departamento</h3><div class="ctl"><label>Indicador <select id="mp-met">${Object.entries(MET).map(([k,v])=>`<option value="${k}">${v[0]}</option>`).join("")}</select></label></div><div class="chart" id="mp"></div><div id="mp-leg"></div><div class="small" style="margin-top:6px">Clic en un departamento para ver su detalle. Colores por quintiles (cada color agrupa a la quinta parte de los departamentos). Los departamentos más poblados tienden a tener más registros.</div></div>
+   <div class="card"><h3>Detalle del departamento</h3><div class="ctl"><label>Departamento <select id="dt-sel">${deps.slice().sort((a,b)=>a.departamento.localeCompare(b.departamento,"es")).map(d=>`<option value="${d.key}">${esc(dname(d.key))}</option>`).join("")}</select></label></div><div id="dt"></div></div></div>
+  <div class="card" style="margin-top:14px"><h3>Tabla departamental</h3><div class="ctl"><input type="search" id="dp-q" placeholder="Buscar departamento…"></div><div id="dp-tab"></div><div class="small">Variación 12 m: últimos 12 meses frente a los 12 previos; vacía si algún tramo tiene meses sin dato observado. Las celdas vacías no se rellenan con cero.</div></div>
+  <div class="card" style="margin-top:14px"><h3>Municipios (≥ ${D.territorial.municipios.cobertura.umbral_total} registros en el periodo)</h3>
+   <div class="note info">Se muestran conteos anuales de ${D.territorial.municipios.cobertura.municipios_publicados} municipios (${fmt(D.territorial.municipios.cobertura.registros_en_municipios_publicados)} de ${fmt(D.territorial.municipios.cobertura.registros_con_municipio_total)} registros con municipio). Para proteger la privacidad, los conteos anuales &lt; ${D.territorial.municipios.cobertura.umbral_supresion} se suprimen (“&lt;5”). <b>No se pronostica a nivel municipal</b>: los conteos son demasiado pequeños para validar un modelo.</div>
+   <div class="ctl"><input type="search" id="mu-q" placeholder="Buscar municipio…"><label>Departamento <select id="mu-d"><option value="">Todos</option>${[...new Set(D.territorial.municipios.filas.map(m=>m.departamento))].sort((a,b)=>a.localeCompare(b,"es")).map(x=>`<option>${esc(x)}</option>`).join("")}</select></label></div><div id="mu-tab"></div></div>`;
+  const drawMap=()=>{colombiaMap($("#mp"),$("#mp-leg"),TS.met,TS.sel,k=>{TS.sel=k;$("#dt-sel").value=k;syncHdr(k);drawMap();drawDet()})};
+  const drawDet=()=>{const d=deps.find(x=>x.key===TS.sel);const pH=h=>D.pronostico.departamental[h][d.key];
+    $("#dt").innerHTML=`<div class="grid g3" style="margin-bottom:8px"><div><div class="small">Total del periodo</div><b style="font-size:20px">${fmt(d.total_periodo)}</b></div><div><div class="small">Participación nacional</div><b style="font-size:20px">${fmt(d.participacion_pct,1)} %</b></div><div><div class="small">Cobertura temporal</div><b style="font-size:20px">${fmt(d.pct_cobertura,0)} %</b></div></div><div class="chart" id="dt-ch"></div>
+    <p class="small">${d.limitacion_cobertura?`<b>${esc(d.limitacion_cobertura)}.</b> Los meses sin dato aparecen como interrupciones de la línea, no como cero. `:""}Pronóstico: H6 ${badge(d.estado_H6)} · H12 ${badge(d.estado_H12)} ${pH("H6")?`· <a href="#pronostico" id="dt-go">Ver pronóstico</a>`:"· sin pronóstico (solo histórico)"}</p>`;
+    line($("#dt-ch"),{labels:D.meses,fmtX:m=>m.slice(0,4),fmtTip:fm,xticks:7,h:230,series:[{name:dname(d.key),color:C.teal,values:d.serie,w:1.6}],shades:[{i0:serie.findIndex(s=>s.prelim),i1:serie.length-1,color:"#fbeab9"}],alt:"Serie mensual del departamento"});
+    const go=$("#dt-go");if(go)go.onclick=e=>{e.preventDefault();setFocus(d.key,"pronostico")}};
+  $("#mp-met").onchange=e=>{TS.met=e.target.value;drawMap()};$("#dt-sel").value=TS.sel;$("#dt-sel").onchange=e=>{TS.sel=e.target.value;syncHdr(TS.sel);drawMap();drawDet()};
+  drawMap();drawDet();
+  const dcols=[{h:"Departamento",v:r=>r.departamento,f:r=>esc(dname(r.key))},{h:"Total",n:1,v:r=>r.total_periodo,f:r=>fmt(r.total_periodo)},{h:"% nacional",n:1,v:r=>r.participacion_pct,f:r=>fmt(r.participacion_pct,1)},{h:"Últimos 12 m",n:1,v:r=>r.ult12,f:r=>fmt(r.ult12)},{h:"12 m previos",n:1,v:r=>r.prev12,f:r=>fmt(r.prev12)},{h:"Var. 12 m",n:1,v:r=>r.var_pct_12m,f:r=>pct(r.var_pct_12m)},{h:"Prom. mensual",n:1,v:r=>r.media_mensual,f:r=>fmt(r.media_mensual,1)},{h:"Cobertura",n:1,v:r=>r.pct_cobertura,f:r=>fmt(r.pct_cobertura,0)+" %"},{h:"Pronóstico 6 m",v:r=>r.estado_H6,f:r=>badge(r.estado_H6)},{h:"Pronóstico 12 m",v:r=>r.estado_H12,f:r=>badge(r.estado_H12)}];
+  const dp=()=>{const q=$("#dp-q").value.toLowerCase();table($("#dp-tab"),dcols,deps.filter(d=>d.departamento.toLowerCase().includes(q)),{sort:1,asc:false})};$("#dp-q").oninput=dp;dp();
+  const M=D.territorial.municipios,mc=[{h:"Municipio",v:r=>r.municipio,f:r=>esc(pretty(r.municipio))},{h:"Departamento",v:r=>r.departamento,f:r=>esc(pretty(r.departamento))},{h:"Total",n:1,v:r=>r.total,f:r=>`<b>${fmt(r.total)}</b>`}].concat(M.anios.map((a,i)=>({h:String(a)+(PRE.has(a)?"*":""),n:1,v:r=>r.anual[i],f:r=>r.anual[i]==null?'<span class="small">&lt;5</span>':fmt(r.anual[i])})));
+  const mu=()=>{const q=$("#mu-q").value.toLowerCase(),d=$("#mu-d").value;table($("#mu-tab"),mc,M.filas.filter(m=>(!q||m.municipio.toLowerCase().includes(q))&&(!d||m.departamento===d)),{sort:2,asc:false})};$("#mu-q").oninput=mu;$("#mu-d").onchange=mu;mu();
+  $("#mu-tab").insertAdjacentHTML("afterend",`<div class="small">* año preliminar (${UA} parcial). Un conteo anual vacío (“&lt;5”) indica entre 1 y 4 registros; “0” = ningún registro.</div>`);
+}
+
+/* ---------- 5. CARACTERIZACIÓN ---------- */
+const DIMN={sexo:"Sexo",edad_grupo:"Grupo de edad",ciclo_vital:"Ciclo vital",estado_civil:"Estado civil",escolaridad:"Escolaridad",zona:"Zona",escenario:"Escenario del hecho",causa_grupo:"Grupo de causa (informada)",pais_nacimiento:"País de nacimiento"};
+const SI=new Set(["SIN INFORMACION","POR DETERMINAR"]);
+const SC={dim:"sexo",ter:"NACIONAL",per:"TODO"};
+function mCarac(){
+  const dimsAvail=Object.keys(DIMN);
+  const deps=[...new Set(D.caracterizacion.filter(x=>x.nivel==="DEPARTAMENTAL").map(x=>x.depto))].sort((a,b)=>a.localeCompare(b,"es"));
+  const anios=[...new Set(D.caracterizacion.filter(x=>x.agr==="ANUAL").map(x=>x.anio))].sort();
+  $("#sociodemografica").innerHTML=`<div class="space-y-1 mhead"><p class="kick">MÓDULO 05 · INMLCF · PERFIL DE LOS REGISTROS</p><h2 class="serif">Caracterización sociodemográfica</h2></div><p class="lead">Distribución de los registros por sexo, edad, escolaridad, estado civil, zona y otras variables disponibles. Describe a quienes están en el registro; <b>no permite estimar riesgo individual</b> ni explicar causas.</p>${PERIOD_NOTE}
+  <div class="card"><div class="ctl"><label>Variable <select id="cr-d">${dimsAvail.map(d=>`<option value="${d}">${DIMN[d]}</option>`).join("")}</select></label><label>Territorio <select id="cr-t"><option value="NACIONAL">Nacional</option>${deps.map(d=>`<option value="${esc(d)}">${esc(pretty(d))}</option>`).join("")}</select></label><label>Periodo <select id="cr-p"><option value="TODO">Todo el periodo</option>${anios.map(a=>`<option value="${a}">${a}${PRE.has(+a)?" (preliminar)":""}</option>`).join("")}</select></label></div><div id="cr-body"></div></div>
+  <div class="note info" style="margin-top:14px"><b>Variables no publicadas.</b> Por criterios de mensajes seguros y de protección de grupos pequeños, este tablero no muestra el mecanismo, la pertenencia a grupos poblacionales ni la franja horaria. Se mantienen en el análisis académico (notebook 04).</div>`;
+  $("#cr-d").value=SC.dim;$("#cr-t").value=SC.ter;
+  const draw=()=>{SC.dim=$("#cr-d").value;SC.ter=$("#cr-t").value;syncHdr(SC.ter==="NACIONAL"?"NACIONAL":(KEYBYNAME[SC.ter]||"NACIONAL"));SC.per=$("#cr-p").value;const dep=SC.ter!=="NACIONAL";
+    if(dep&&SC.per!=="TODO"){$("#cr-p").value="TODO";SC.per="TODO"}$("#cr-p").disabled=dep;
+    let rows=D.caracterizacion.filter(x=>x.dim===SC.dim&&(dep?(x.nivel==="DEPARTAMENTAL"&&x.depto===SC.ter):(x.nivel==="NACIONAL"&&(SC.per==="TODO"?x.agr==="TODO_EL_PERIODO":(x.agr==="ANUAL"&&String(x.anio)===SC.per)))));
+    if(!rows.length){$("#cr-body").innerHTML=`<div class="note">Sin datos para esta selección.</div>`;return}
+    const tot=rows[0].total,conoc=rows[0].conocidos;const known=rows.filter(r=>!SI.has(r.cat)),si=rows.filter(r=>SI.has(r.cat));
+    const sinN=si.reduce((a,r)=>a+(r.n||0),0);const pctSin=tot?(tot-conoc)/tot*100:0;
+    const orden=SC.dim==="edad_grupo"||SC.dim==="ciclo_vital"||SC.dim==="escolaridad"?null:1;const kk=known.slice();if(orden)kk.sort((a,b)=>(b.n||0)-(a.n||0));
+    const noP=kk.some(r=>r.pct==null&&r.n!=null);
+    $("#cr-body").innerHTML=`<h3>${DIMN[SC.dim]} · ${SC.ter==="NACIONAL"?"Nacional":esc(pretty(SC.ter))} · ${SC.per==="TODO"?"todo el periodo":SC.per}</h3>
+     <div class="small" style="margin-bottom:8px">Total de registros: <b>${fmt(tot)}</b> · con información conocida: <b>${fmt(conoc)}</b> · sin información / por determinar: <b>${fmt(tot-conoc)}</b> (${fmt(pctSin,1)} %). Los porcentajes se calculan sobre los registros con información conocida.</div>
+     <div id="cr-bars"></div>${noP?`<div class="note">Los porcentajes no se muestran cuando hay menos de 30 registros con información conocida o la categoría tiene menos de ${5} registros. Los conteos &lt; 5 se suprimen.</div>`:""}
+     ${pctSin>=30?`<div class="note"><b>Alta proporción sin información (${fmt(pctSin,0)} %).</b> Interprete la distribución con cautela: puede no representar al total.</div>`:""}
+     ${SC.dim==="escolaridad"?`<div class="small">Nota: se observan registros de escolaridad "preescolar" en adultos, posible uso distinto del código en la fuente.</div>`:""}
+     ${SC.per!=="TODO"&&PRE.has(+SC.per)?`<div class="note">${SC.per} es preliminar: la composición puede cambiar al consolidarse.</div>`:""}`;
+    hbars($("#cr-bars"),kk.map(r=>({label:pretty(r.cat.toLowerCase()).replace(/^./,c=>c.toUpperCase()),value:r.n||0,text:r.n==null?"<5":`${fmt(r.n)}${r.pct!=null?" · "+fmt(r.pct,1)+" %":""}`,title:r.cat})));
+    if(si.length)$("#cr-bars").insertAdjacentHTML("beforeend",`<div style="margin-top:8px;border-top:1px dashed var(--line);padding-top:6px"></div>`);
+    if(si.length){const d2=document.createElement("div");$("#cr-bars").appendChild(d2);hbars(d2,si.map(r=>({label:r.cat==="SIN INFORMACION"?"Sin información":"Por determinar",value:r.n||0,si:1,text:r.n==null?"<5":fmt(r.n)})))}};
+  ["cr-d","cr-t","cr-p"].forEach(i=>$("#"+i).onchange=draw);draw();
+}
+
+/* ---------- 6. METODOLOGÍA ---------- */
+function mMeto(){
+  const q=D.calidad,r=q.resumen,mt=q.metodología||q.metodologia,P=mt.backtesting;
+  const dl=[["serie_mensual_nacional.csv","Serie mensual nacional"],["serie_mensual_departamental.csv","Series mensuales por departamento"],["pronosticos_frecuencia_H6_H12.csv","Pronósticos (nacional y departamental)"],["territorial_departamentos.csv","Tabla departamental"],["territorial_municipios_conteos_anuales.csv","Municipios (conteos anuales)"],["caracterizacion_sociodemografica.csv","Caracterización sociodemográfica"],["evaluacion_modelos_nacional.csv","Evaluación de modelos (nacional)"],["evaluacion_modelos_departamental.csv","Evaluación de modelos (departamental)"],["diccionario_datos.csv","Diccionario de datos"]];
+  $("#metodologia").innerHTML=`<div class="space-y-1 mhead"><p class="kick">MÓDULO 06 · METODOLOGÍA · FUENTES · LIMITACIONES</p><h2 class="serif">Cómo se construyó este observatorio</h2></div><p class="lead">Fuentes, procesamiento, evaluación de modelos, limitaciones y fecha de actualización.</p>
+  <div class="grid g3"><div class="card kpi"><div class="l">Fecha de actualización del tablero</div><div class="v" style="font-size:22px">${esc(D.meta.fecha_actualizacion)}</div></div><div class="card kpi"><div class="l">Corte de los datos</div><div class="v" style="font-size:22px">${fm(D.meta.fecha_corte)}</div><div class="s">primer mes: ${fm(D.meta.primer_mes)}</div></div><div class="card kpi"><div class="l">Estado de los datos</div><div class="v" style="font-size:16px">${esc(r.estado_datos)}</div></div></div>
+  <div class="grid g2" style="margin-top:14px">
+   <div class="card"><h3>Fuente y procesamiento</h3><p style="margin:0 0 6px;font-size:13.5px"><b>Fuente:</b> ${esc(q.fuentes.fuente)}. Periodo: ${esc(q.fuentes.periodo)}.</p><ol style="margin:0;padding-left:20px;font-size:13.5px">${q.fuentes.pipeline.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><p class="small">Variable analizada: <b>número mensual de registros</b> (frecuencia). Los meses sin dato observado no se imputan como cero en las series publicadas; solo se interpolan dentro del entrenamiento de cada modelo. No se eliminan duplicados, preliminares ni causas desconocidas.</p></div>
+   <div class="card"><h3>Evaluación de los modelos (backtesting)</h3><ul style="margin:0;padding-left:18px;font-size:13.5px"><li>Ventana expansiva, mínimo ${P.min_entrenamiento_meses} meses de entrenamiento, origen cada ${P.paso_origen_meses} meses (H6: ${P.n_origenes.H6} orígenes; H12: ${P.n_origenes.H12}). Sin partición aleatoria ni fuga de información.</li><li>10 modelos: 5 referencias (ingenuo, estacional, medias móviles, media histórica), suavizamiento exponencial, Holt-Winters, SARIMA y GLM Poisson.</li><li>Métricas: MAE, RMSE, sMAPE, MASE y proporción de orígenes en que se supera al ingenuo.</li><li>Regla de parsimonia: ${esc(mt.regla_parsimonia)}.</li><li>${esc(mt.estados)}</li><li>Intervalos: ${esc(mt.intervalos)}</li></ul></div></div>
+  <div class="card" style="margin-top:14px"><h3>Desempeño de los modelos (promedio de 20 departamentos modelables)</h3><div class="ctl">${seg("mt-h",[["H6","6 meses"],["H12","12 meses"]],"H6")}</div><div id="mt-tab"></div><div class="small">MASE &lt; 1: mejor que el pronóstico ingenuo. Diferencias pequeñas entre modelos no son concluyentes por el bajo número de orígenes y el ruido de los conteos pequeños.</div></div>
+  <div class="card" style="margin-top:14px"><h3>Pronóstico nacional: evaluación</h3><div id="mt-nac"></div></div>
+  <div class="card" style="margin-top:14px"><h3>Calidad: validaciones automáticas</h3><div id="mt-val"></div></div>
+  <div class="grid g2" style="margin-top:14px"><div class="card"><h3>Completitud por variable (% sin información, último año consolidado)</h3><div id="mt-comp"></div></div>
+   <div class="card"><h3>Sensibilidad a datos preliminares</h3><div id="mt-sens"></div><div class="small">Cambio de composición entre ${UA-3}–${UA-2} (consolidado) y ${UA-1}–${UA} (preliminar). V de Cramér: magnitud de la diferencia (0 = sin diferencia). Parte del cambio puede deberse a la consolidación.</div></div></div>
+  <div class="card" style="margin-top:14px"><h3>Limitaciones</h3><ul style="margin:0;padding-left:18px;font-size:13.5px">${q.limitaciones.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+  <div class="card" style="margin-top:14px"><h3>Descargas (CSV)</h3><div class="dl">${dl.map(d=>`<a href="descargas/${d[0]}" download>${d[1]}</a>`).join("")}</div><p class="small">Las descargas incluyen solo agregados con las supresiones descritas. Cada CSV tiene su definición en el diccionario de datos.</p></div>
+  <div class="note info" style="margin-top:14px"><b>Línea de apoyo.</b> Si usted o alguien cercano está en crisis: Línea 106 (Minsalud, 24 horas); en emergencia, 123. Hablar de lo que se siente ayuda.</div>`;
+  const rm=h=>{table($("#mt-tab"),[{h:"Modelo",v:r=>r.modelo,f:r=>esc(r.modelo.replace(/_/g," "))},{h:"Familia",v:r=>r.familia},{h:"MAE medio",n:1,v:r=>r.mae_medio_entre_deptos,f:r=>fmt(r.mae_medio_entre_deptos,2)},{h:"MASE medio",n:1,v:r=>r.mase_medio,f:r=>fmt(r.mase_medio,2)},{h:"Mejora mediana vs. ingenuo",n:1,v:r=>r.mejora_mediana_vs_naive_pct,f:r=>pct(r.mejora_mediana_vs_naive_pct,0)},{h:"Deptos MASE<1",n:1,v:r=>r.n_deptos_mase_menor_1},{h:"Deptos con mejor MAE",n:1,v:r=>r.n_deptos_mejor_mae}],q.resumen_modelos[h],{sort:3})};
+  segBind("mt-h",rm);rm("H6");
+  const nn=nac_eval();table($("#mt-nac"),[{h:"Horizonte",v:r=>r.horizonte},{h:"Modelo",v:r=>r.modelo,f:r=>esc(r.modelo.replace(/_/g," "))},{h:"MAE",n:1,v:r=>r.mae,f:r=>fmt(r.mae,1)},{h:"MASE",n:1,v:r=>r.mase,f:r=>fmt(r.mase,2)},{h:"Supera al ingenuo",n:1,v:r=>r.prop_supera_naive,f:r=>fmt(r.prop_supera_naive*100,0)+" %"},{h:"Orígenes",n:1,v:r=>r.n_origenes}],nn,{sort:2});
+  table($("#mt-val"),[{h:"Prueba",v:r=>r.prueba},{h:"Resultado",v:r=>r.resultado,f:r=>`<span class="tag ${r.resultado==="OK"?"t-ok":"t-res"}">${esc(r.resultado)}</span>`},{h:"Severidad",v:r=>r.severidad},{h:"Detalle",v:r=>r.detalle}],q.validaciones,{});
+  const ult=Math.max(...q.completitud.map(x=>x.anio)),lastC=q.completitud.filter(x=>x.anio===UA-2);
+  table($("#mt-comp"),[{h:"Variable",v:r=>r.variable},{h:`% sin información ${UA-2}`,n:1,v:r=>r.pct_sin_info,f:r=>fmt(r.pct_sin_info,1)+" %"},{h:`% sin info. ${UA-1}`,n:1,v:r=>(q.completitud.find(x=>x.variable===r.variable&&x.anio===UA-1)||{}).pct_sin_info,f:r=>fmt((q.completitud.find(x=>x.variable===r.variable&&x.anio===UA-1)||{}).pct_sin_info,1)+" %"}],lastC,{sort:1,asc:false});
+  table($("#mt-sens"),[{h:"Variable",v:r=>r.dimension},{h:"V de Cramér",n:1,v:r=>r["V_cramer_2023_24_vs_2025_26"],f:r=>fmt(r["V_cramer_2023_24_vs_2025_26"],2)},{h:"Mayor cambio (categoría)",v:r=>r.categoria_mayor_cambio},{h:"pp",n:1,v:r=>r.dif_pp_max_abs,f:r=>fmt(r.dif_pp_max_abs,1)}],q.sens_preliminares,{sort:1,asc:false});
+}
+function nac_eval(){const out=[];["H6","H12"].forEach(h=>{const hh=h;D.pronostico.evaluacion_nacional.filter(r=>r.horizonte===hh).forEach(r=>out.push(r))});return out.filter(r=>["NAIVE","SNAIVE","MA6","MA12","MEDIA_HIST","HW_ADD","ETS_SES","SARIMA_AIRLINE","GLM_POISSON_TEND_EST","ETS_HOLT_AMORT"].includes(r.modelo))}
+
+/* ---------- foco global, navegación y arranque ---------- */
+const KEYBYNAME=Object.fromEntries(D.territorial.departamentos.map(d=>[d.departamento,d.key]));
+const R={resumen:mResumen,evolucion:mEvolucion,pronostico:mPron,territorial:mTerr,sociodemografica:mCarac,metodologia:mMeto};
+function safe(id){try{R[id]();}catch(e){console.error(id,e);$("#"+id).innerHTML=`<div class="note">Error al construir este módulo: ${esc(e.message)}</div>`}if(window.lucide)lucide.createIcons()}
+function syncHdr(k){const s=$("#focus-sel");if(s&&[...s.options].some(o=>o.value===k))s.value=k}
+function setFocus(k,go){ST.ter=k;if(k!=="NACIONAL")TS.sel=k;SC.ter=k==="NACIONAL"?"NACIONAL":(NOMDEP[k]||"NACIONAL");if(SC.ter!=="NACIONAL")SC.per="TODO";syncHdr(k);["pronostico","territorial","sociodemografica"].forEach(safe);if(go)$("#"+go).scrollIntoView({behavior:"smooth"})}
+function toggleSidebar(){const s=$("#sidebar");if(innerWidth<1024){s.classList.toggle("mobile-open");$("#sidebar-backdrop").classList.toggle("show",s.classList.contains("mobile-open"))}else s.classList.toggle("collapsed")}
+const NAVI=[["resumen","compass","1 · Resumen nacional"],["evolucion","line-chart","2 · Evolución histórica"],["pronostico","trending-up","3 · Pronóstico de frecuencia"],["territorial","map-pin","4 · Análisis territorial"],["sociodemografica","users","5 · Caracterización"],["metodologia","book-open","6 · Metodología y calidad"]];
+$("#nav").innerHTML=`<p class="navt">Módulos</p>`+NAVI.map(n=>`<a href="#${n[0]}" class="nav-item" data-id="${n[0]}" onclick="if($('#sidebar').classList.contains('mobile-open'))toggleSidebar()"><i data-lucide="${n[1]}" class="ic"></i> ${n[2]}</a>`).join("");
+const fs=$("#focus-sel");fs.innerHTML=`<option value="NACIONAL">Nacional</option>`+D.territorial.departamentos.slice().sort((a,b)=>a.departamento.localeCompare(b.departamento,"es")).map(d=>`<option value="${d.key}">${esc(dname(d.key))}</option>`).join("");
+fs.onchange=()=>setFocus(fs.value);$("#focus-nar").onclick=()=>{fs.value="NARINO";setFocus("NARINO")};
+$("#hdr-per").textContent=fm(D.meta.primer_mes)+" – "+fm(D.meta.fecha_corte);$("#hdr-act").textContent=D.meta.fecha_actualizacion;
+Object.keys(R).forEach(safe);
+const secs=[...document.querySelectorAll("section.mod")];
+function spy(){let cur=secs[0].id;secs.forEach(s=>{if(s.getBoundingClientRect().top<innerHeight*0.35)cur=s.id});document.querySelectorAll(".nav-item").forEach(a=>a.classList.toggle("active",a.dataset.id===cur))}
+addEventListener("scroll",spy,{passive:true});spy();addEventListener("load",()=>{if(window.lucide)lucide.createIcons()});
+
+</script></body></html>
